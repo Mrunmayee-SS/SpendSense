@@ -7,7 +7,6 @@ const userRoute = require('./routes/usersRoute');
 const transactionsRoute = require('./routes/transactionsRoute');
 app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
-const User = require("../models/User");
 
 
 const port =process.env.PORT || 5000
