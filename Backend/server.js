@@ -1,12 +1,14 @@
 const express = require('express')
-const dbConnect = require('./dbConnect')
+const dbConnect = require('./dbConnect');
 const app = express()
 app.use(express.json())
 const path = require('path')
-const userRoute = require('./routes/usersRoute')
-const transactionsRoute = require('./routes/transactionsRoute')
+const userRoute = require('./routes/usersRoute');
+const transactionsRoute = require('./routes/transactionsRoute');
 app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
+const User = require("../models/User");
+
 
 const port =process.env.PORT || 5000
 
