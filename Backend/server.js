@@ -9,13 +9,18 @@ const transactionsRoute = require('./routes/transactionsRoute');
 app.use('/api/users/', userRoute);
 app.use('/api/transactions/', transactionsRoute);
 
-const port = 8080; // Render sets PORT in production
+// 404 handler for undefined API routes
+app.use('/api', (req, res) => {
+    res.status(404).json({ message: "API endpoint not found" });
+});
+
+const port = 8080;
 
 if (process.env.NODE_ENV === 'production') {
-    // Serve static files from the "build" directory (assuming a React front end)
+    // Serve static files from the "build" directory
     app.use(express.static(path.join(__dirname, 'build')));
 
-    // Serve index.html on all unspecified routes
+    // Handle client-side routing, return index.html for all other routes
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'index.html'));
     });
