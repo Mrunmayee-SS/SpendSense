@@ -13,7 +13,7 @@ function Login() {
   const onFinish = async (values) => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/login", values);
+      const response = await axios.post("https://spendsense-czag.onrender.com/api/users/login", values);
       localStorage.setItem(
         "user",
         JSON.stringify({ ...response.data, password: "" })

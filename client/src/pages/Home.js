@@ -30,7 +30,7 @@ function Home() {
 
       setLoading(true);
       const response = await axios.post(
-        "/api/transactions/get-all-transactions",
+        "https://spendsense-czag.onrender.com/api/transactions/get-all-transactions",
         {
           userid: user._id,
           frequency,
