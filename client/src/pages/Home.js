@@ -49,7 +49,7 @@ function Home() {
   const deleteTransaction = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/api/transactions/delete-transaction", {
+      await axios.post("https://spend-sense-five.vercel.app/api/transactions/delete-transaction", {
         transactionId: record._id,
       });
       message.success("Transaction Deleted successfully");
