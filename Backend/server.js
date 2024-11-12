@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const dbConnect = require('./dbConnect');
 const app = express();
 app.use(express.json());
+app.use(cors()); // Enable CORS for all routes by default
+
 const path = require('path');
 const userRoute = require('./routes/usersRoute');
 const transactionsRoute = require('./routes/transactionsRoute');
@@ -22,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 
     // Handle client-side routing, return index.html for all other routes
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
     });
 }
 
