@@ -9,7 +9,7 @@ const transactionsRoute = require('./routes/transactionsRoute');
 app.use('/api/users/', userRoute);
 app.use('/api/transactions/', transactionsRoute);
 
-const port = process.env.PORT || 8080; // Render sets PORT in production
+const port = 8080; // Render sets PORT in production
 
 if (process.env.NODE_ENV === 'production') {
     // Serve static files from the "build" directory (assuming a React front end)

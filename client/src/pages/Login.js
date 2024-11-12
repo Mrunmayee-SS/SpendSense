@@ -62,7 +62,7 @@ function Login() {
         <div className="col-md-5">
           <div className="lottie">
             <lottie-player
-              src="https://assets3.lottiefiles.com:8080/packages/lf20_06a6pf9i.json"
+              src="https://assets3.lottiefiles.com:10000/packages/lf20_06a6pf9i.json"
               background="transparent"
               speed="1"
               loop
