@@ -21,11 +21,11 @@ const port = 8080;
 
 if (process.env.NODE_ENV === 'production') {
     // Serve static files from the "build" directory
-    app.use(express.static(path.join(__dirname, 'build')));
+    app.use(express.static(path.join(__dirname)));
 
     // Handle client-side routing, return index.html for all other routes
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'index.html'));
     });
 }
 
