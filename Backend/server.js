@@ -13,9 +13,6 @@ app.use('/api/users/', userRoute);
 app.use('/api/transactions/', transactionsRoute);
 
 // 404 handler for undefined API routes
-app.use('/api', (req, res) => {
-    res.status(404).json({ message: "API endpoint not found" });
-});
 
 const port = 8080;
 
@@ -24,9 +21,9 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname)));
 
     // Handle client-side routing, return index.html for all other routes
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'index.html'));
-    });
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.resolve(__dirname, 'index.html'));
+    // });
 }
 
-app.listen(port, '0.0.0.0', () => console.log(`Node JS Server started at port ${port}!`));
+app.listen(port, '0.0.0.0', () => console.log(`Node JS Server started at port ${port} test`));
