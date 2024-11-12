@@ -16,7 +16,7 @@ function AddEditTransaction({
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (selectedItemForEdit) {
-        await axios.post("https://spend-sense-five.vercel.app/api/transactions/edit-transaction", {
+        await axios.post("https://spendsense-czag.onrender.com/api/transactions/edit-transaction", {
            payload : {
             ...values,
             userid: user._id,
@@ -26,7 +26,7 @@ function AddEditTransaction({
         getTransactions();
         message.success("Transaction Updated successfully");
       } else {
-        await axios.post("https://spend-sense-five.vercel.app/api/transactions/add-transaction", {
+        await axios.post("https://spendsense-czag.onrender.com//transactions/add-transaction", {
           ...values,
           userid: user._id,
         });
