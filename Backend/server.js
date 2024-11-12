@@ -9,7 +9,7 @@ app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
 
 
-const port =process.env.PORT || 5000
+const port = 8080
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static('/'));
