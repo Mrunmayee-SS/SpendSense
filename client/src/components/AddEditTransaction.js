@@ -26,7 +26,7 @@ function AddEditTransaction({
         getTransactions();
         message.success("Transaction Updated successfully");
       } else {
-        await axios.post("https://spendsense-czag.onrender.com/transactions/add-transaction", {
+        await axios.post("https://spendsense-czag.onrender.com/api/transactions/add-transaction", {
           ...values,
           userid: user._id,
         });
